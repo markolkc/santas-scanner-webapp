@@ -27,7 +27,7 @@ const Leaderboard: React.FC = () => {
     useEffect(() => {
         const fetchLeaderboard = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/leaderboard');
+                const response = await axios.get('https://localhost:3000/leaderboard');
                 console.log("fetchLeaderboard");
                 console.log(response.data);
                 setLeaderboard(response.data);
@@ -45,7 +45,7 @@ const Leaderboard: React.FC = () => {
     useEffect(() => {
         const fetchUserCountry = async () => {
             try {
-                const response = await axios.get('http://ip-api.com/json');
+                const response = await axios.get('https://ip-api.com/json');
                 if (response.data.status === 'success') {
                     setUserCountry(response.data.countryCode);
                 }
