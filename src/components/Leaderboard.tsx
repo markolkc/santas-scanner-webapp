@@ -27,7 +27,7 @@ const Leaderboard: React.FC = () => {
     useEffect(() => {
         const fetchLeaderboard = async () => {
             try {
-                const response = await axios.get('https://santas-scanner-backend-vercluks.vercel.app/');
+                const response = await axios.get('https://santas-scanner-backend-vercluks.vercel.app/leaderboard');
                 console.log("fetchLeaderboard");
                 console.log(response.data);
                 setLeaderboard(response.data);
