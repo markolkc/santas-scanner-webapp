@@ -15,7 +15,7 @@ const Scanner: React.FC = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const navigate = useNavigate();
   const fetchQuestions = async () => {
-    const res = await axios.get('https://localhost:3000/questions');
+    const res = await axios.get('https://santas-scanner-backend-vercluks.vercel.app/questions');
     console.log("fetchQuestions");
     console.log(res.data);
     setQuestions(res.data);
@@ -60,7 +60,7 @@ const Scanner: React.FC = () => {
     };
 
     try {
-      const countryResponse = await axios.get('https://ip-api.com/json');
+      const countryResponse = await axios.get('https://santas-scanner-backend-vercluks.vercel.app/');
       if (countryResponse.data.status === 'success') {
         verdict.country = countryResponse.data.countryCode;
       }
