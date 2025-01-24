@@ -60,7 +60,7 @@ const Scanner: React.FC = () => {
     };
 
     try {
-      const countryResponse = await axios.get('https://santas-scanner-backend-vercluks.vercel.app/scan-results');
+      const countryResponse = await axios.get('http://ip-api.com/json');
       if (countryResponse.data.status === 'success') {
         verdict.country = countryResponse.data.countryCode;
       }
@@ -72,7 +72,7 @@ const Scanner: React.FC = () => {
     setIsScanning(false);
 
     try {
-      const res = await axios.post('https://localhost:3000/scan-results', verdict);
+      const res = await axios.post('https://santas-scanner-backend-vercluks.vercel.app/scan-results', verdict);
       console.log("POST to /scan-results", res.data);
     } catch (error) {
       console.error("Failed to save scan result", error);
