@@ -60,7 +60,7 @@ const Scanner: React.FC = () => {
     };
 
     try {
-      const countryResponse = await axios.get('https://santas-scanner-backend-vercluks.vercel.app/');
+      const countryResponse = await axios.get('https://santas-scanner-backend-vercluks.vercel.app/scan-results');
       if (countryResponse.data.status === 'success') {
         verdict.country = countryResponse.data.countryCode;
       }
